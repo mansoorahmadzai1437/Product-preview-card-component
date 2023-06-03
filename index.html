@@ -1,0 +1,101 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&family=Montserrat:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind configurations -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              // Primary colors
+              darkCyan: "hsl(158, 36%, 37%)",
+              cream: "hsl(30, 38%, 92%)",
+              // Neutral colors
+              veryDarkBlue: "hsl(212, 21%, 14%)",
+              darkGrayishBlue: "hsl(228, 12%, 48%)",
+              white: "hsl(0, 0%, 100%)",
+            },
+            fontFamily: {
+              sans: ["Montserrat", "sans-serif"],
+              serif: ["Fraunces", "serif"],
+            },
+            screens: {
+              sm: "375px",
+              xl: "1440px",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Product Preview Card Component</title>
+  </head>
+  <body>
+    <!-- Main container -->
+    <div class="flex justify-center items-center bg-cream h-screen">
+      <!-- Card -->
+      <div class="bg-white mx-6 rounded-xl shadow shadow-sm">
+        <!-- Flex container -->
+        <div class="flex flex-col md:flex-row">
+          <!-- Image-desktop-->
+          <img
+            src="images/image-product-desktop.jpg"
+            class="object-fit hidden md:block md:w-72 md:rounded-l-xl"
+          />
+          <!-- Image-mobile -->
+          <img
+            src="images/image-product-mobile.jpg"
+            class="object-fit block md:hidden w-full rounded-t-xl"
+          />
+          <!-- Content -->
+          <div class="p-8 w-full md:w-72">
+            <!-- Product type -->
+            <p class="text-darkGrayishBlue font-sans-700 tracking-[6px] text-sm mb-3">
+              PERFUME
+            </p>
+            <!-- Product name -->
+            <p class="text-3xl font-serif text-veryDarkBlue mb-4">
+              Gabrielle Essence Eua De Parfum
+            </p>
+            <!-- Product description -->
+            <p class="text-14px font-sans text-darkGrayishBlue mb-6">
+              A floral, solar and voluptuous interpretation composed by Olivier
+              Polge, Perfumer-Creator for the House of CHANEL.
+            </p>
+            <!-- Price Container -->
+            <div class="flex flex-row space-x-6 items-center mb-4">
+              <div class="font-serif text-3xl text-darkCyan">$149.99</div>
+              <div class="font-sans text-sm text-darkGrayishBlue line-through">
+                $169.99
+              </div>
+            </div>
+            <!-- Button -->
+            <button
+              class="bg-darkCyan w-full p-2 px-8 rounded-lg hover:bg-emerald-950 transition duration-150"
+            >
+              <div class="inline-block px-1">
+                <img src="images/icon-cart.svg" class="w-3" />
+              </div>
+              <span class="text-white font-sans font-bold text-sm"
+                >Add to Cart</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
